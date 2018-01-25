@@ -1,0 +1,4 @@
+[25-Jan-2018 20:43:20 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Slim\slim' not found in /var/www/html/ecommerce/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/ecommerce/index.php on line 16
