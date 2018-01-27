@@ -10,7 +10,7 @@ ini_set('display_errors', 1);
 
 
 
-use \Slim\slim;
+use \Slim\Slim;
 use \Hcode\Page;
 
 $app = new Slim();
