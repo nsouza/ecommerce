@@ -13,7 +13,7 @@ class User extends Model{
     {
         $sql = new Sql();
 
-        $results = $ql->selct("SELECT * FROM tb_users WHERE deslogin = :LOGIN", array(
+        $results = $sql->select("SELECT * FROM tb_users WHERE deslogin = :LOGIN", array(
                 ":LOGIN"=>$login,
         ));
 
@@ -23,13 +23,13 @@ class User extends Model{
 
         $data = $results[0];
 
-        if (password_verify($password, $data["despassword"]) === tre)
+        if (password_verify($password, $data["despassword"]) === true)
         {
             $user = new User();
 
             $user->setData($data);
 
-            $_SESSION[User::SESSION] = $User->getValues();
+            $_SESSION[User::SESSION] = $user->getValues();
 
             return $user;
 
