@@ -22,6 +22,8 @@ class Sql {
 
 	}
 
+	
+
 	private function setParams($statement, $parameters = array())
 	{
 
