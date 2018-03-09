@@ -69,6 +69,24 @@ class User extends Model{
       return $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING(idperson) ORDER BY b.desperson");
   }
 
+  public function save()
+  {
+      $sql = new Sql();
+
+     $results = $sql->select("CALL sp_usersupdate_save(:desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmmin)",
+            array(
+                ":desperson"=>$this->getdesperson(),
+                ":deslogi"=>$this->getdeslogin(),
+                ":despassword"=>$this->getdespassoword(),
+                ":desemail"=>$this->getdesemail(),
+                ":nrphone"=>$this->getnrphone(),
+                ":inadmin"=>$this->getinadmin()
+            ));
+
+    $this->setData($results[0]);
+  }
+
+ 
   public function get($iduser)
 {
  
@@ -83,6 +101,26 @@ class User extends Model{
  $this->setData($data);
  
  }
+
+ public function update()
+{
+    $sql = new Sql();
+
+    $results = $sql->select("CALL sp_users_save(:iduser, :desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmmin)",
+           array(
+                ":iduser"=>$this->getiduser(),
+               ":desperson"=>$this->getdesperson(),
+               ":deslogi"=>$this->getdeslogin(),
+               ":despassword"=>$this->getdespassoword(),
+               ":desemail"=>$this->getdesemail(),
+               ":nrphone"=>$this->getnrphone(),
+               ":inadmin"=>$this->getinadmin()
+           ));
+
+   $this->setData($results[0]);
+    
+}
+
 
 }
 
