@@ -77,7 +77,7 @@ class User extends Model{
             array(
                 ":desperson"=>$this->getdesperson(),
                 ":deslogi"=>$this->getdeslogin(),
-                ":despassword"=>$this->getdespassoword(),
+                ":despassword"=>$this->getdespassword(),
                 ":desemail"=>$this->getdesemail(),
                 ":nrphone"=>$this->getnrphone(),
                 ":inadmin"=>$this->getinadmin()
@@ -112,7 +112,7 @@ class User extends Model{
                 ":iduser"=>$this->getiduser(),
                ":desperson"=>$this->getdesperson(),
                ":deslogi"=>$this->getdeslogin(),
-               ":despassword"=>$this->getdespassoword(),
+               ":despassword"=>$this->getdespassword(),
                ":desemail"=>$this->getdesemail(),
                ":nrphone"=>$this->getnrphone(),
                ":inadmin"=>$this->getinadmin()
